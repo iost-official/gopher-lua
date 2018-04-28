@@ -871,7 +871,7 @@ func (ls *LState) callR(nargs, nret, rbase int) {
 	if ls.G.MainThread == nil {
 		ls.G.MainThread = ls
 		ls.G.CurrentThread = ls
-		ls.mainLoop(ls, nil)
+		ls.mainLoop(ls, nil)   // TODO add gas count in it
 	} else {
 		ls.mainLoop(ls, ls.currentFrame)
 	}

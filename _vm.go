@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-func mainLoop(L *LState, baseframe *callFrame) {
+func mainLoop(L *LState, baseframe *callFrame) { // Here add gas counter
 	var inst uint32
 	var cf *callFrame
 
