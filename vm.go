@@ -25,6 +25,7 @@ func mainLoop(L *LState, baseframe *callFrame) {
 	}
 
 	for {
+		L.PCount ++
 		cf = L.currentFrame
 		inst = cf.Fn.Proto.Code[cf.Pc]
 		cf.Pc++
@@ -49,6 +50,7 @@ func mainLoopWithContext(L *LState, baseframe *callFrame) {
 	}
 
 	for {
+		L.PCount ++
 		cf = L.currentFrame
 		inst = cf.Fn.Proto.Code[cf.Pc]
 		cf.Pc++

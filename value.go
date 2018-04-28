@@ -9,7 +9,7 @@ import (
 type LValueType int
 
 const (
-	LTNil LValueType = iota
+	LTNil      LValueType = iota
 	LTBool
 	LTNumber
 	LTString
@@ -218,6 +218,8 @@ type LState struct {
 	hasErrorFunc bool
 	mainLoop     func(*LState, *callFrame)
 	ctx          context.Context
+
+	PCount uint64
 }
 
 func (ls *LState) String() string                     { return fmt.Sprintf("thread: %p", ls) }
