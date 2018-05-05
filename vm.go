@@ -26,6 +26,10 @@ func mainLoop(L *LState, baseframe *callFrame) {
 
 	for {
 		L.PCount ++
+		if L.PCount > L.PCLimit {
+			L.RaiseError("gas run out")
+			return
+		}
 		cf = L.currentFrame
 		inst = cf.Fn.Proto.Code[cf.Pc]
 		cf.Pc++
@@ -51,6 +55,10 @@ func mainLoopWithContext(L *LState, baseframe *callFrame) {
 
 	for {
 		L.PCount ++
+		if L.PCount > L.PCLimit {
+			L.RaiseError("gas run out")
+			return
+		}
 		cf = L.currentFrame
 		inst = cf.Fn.Proto.Code[cf.Pc]
 		cf.Pc++

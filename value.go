@@ -220,6 +220,7 @@ type LState struct {
 	ctx          context.Context
 
 	PCount uint64
+	PCLimit uint64
 }
 
 func (ls *LState) String() string                     { return fmt.Sprintf("thread: %p", ls) }
