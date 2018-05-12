@@ -1607,6 +1607,7 @@ func (ls *LState) Load(reader io.Reader, name string) (*LFunction, error) {
 }
 
 func (ls *LState) Call(nargs, nret int) {
+	ls.PCount = 0
 	ls.callR(nargs, nret, -1)
 }
 
